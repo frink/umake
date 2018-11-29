@@ -1,0 +1,64 @@
+CC =                    gcc Dog
+DOG =    BENJI IS CUTE
+
+#HELLO!               
+    Alpha  : Beta Dog #HELLO!
+	echo ${CC} Rules for A
+	echo again Rules for A
+	pwd
+
+Beta: Charlie
+	echo Rules for B
+	ls -l
+	echo ${DOG}
+Charlie:
+	echo ${USER}  Rules for C, ${USER}, ${USER}
+Delta:
+	echo HELLO!
+
+hello: hello.c
+	gcc -o hello hello.c
+	echo Done
+
+clean:
+	rm hello
+
+work:
+	date >> log
+	ls -a > files
+	wc -l < files
+	wc -l < files > line_count
+
+workt:
+	ls -a > files
+	wc -l < files
+	wc -l < files > line_count
+
+A: B
+	echo touch A
+	touch A
+B: C
+	echo touch B
+	touch B
+C:
+	echo touch C
+	touch C
+
+umake: umake.o arg_parse.o target.o
+	gcc -g -Wall -o umake umake.o arg_parse.o target.o
+	echo uMake built
+
+arg_parse.o: arg_parse.c arg_parse.h
+	gcc -g -c arg_parse.c
+
+umake.o: umake.c arg_parse.h
+	gcc -g -c umake.c
+
+target.o: target.c target.h
+	gcc -g -c target.lc
+
+install:
+	cp -p umake ${HOME}/bin/umake
+
+error:
+	echo ${}}
